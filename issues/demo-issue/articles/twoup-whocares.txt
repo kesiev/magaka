@@ -1,0 +1,9 @@
+@BRHTML:article
+Nothing was more painful than putting together this thing. And I'm not talking about #toolname#, that is one of my classic JS blobs with a fat example shipped together <i>(Cough cough... Akihabara...)</i>.
+The <i>real</i> pain was putting together <i>#magazinetitle#</i>, the magazine that I created to show and test the features of #toolname#.
+#toolname# was originally called with the bland working name <i>Paperpad</i> and that was an unlucky choose. All the articles and layouts were formatted using the <i>toolname</i> placeholder, that became really handy when I (my GF) decided the final name of this thingy but, since I used the iPad screen as reference, I had to choose a very short name for keeping the same articles length and saving me the boring job of shortening all the articles of some words.
+Remember: <i>long working titles for your project</i>. Probably that's why working titles of videogames usually starts with <i>project xxx</i>.
+The original cover of #magazinetitle# was a black sketchy guy with squared eyes and a stupid smile, that I made in GIMP just for testing. The original cover was replaced after a long while and some of the testers miss that. I'll probably include the <i>black guy version</i> of the cover in the next pages of <b>2UP</b>.
+Remember the token box showcased on the main magazine? That was initially made entirely using CSS, if we don't count the green table on the background. I had much fun on designing the tokens but, when I tried them on the iPad... well... the page scrolling was too choppy, so I decided to remove them from the page, replacing the coins with something I made using Inkscape. The original version is shown here - that's why this page is quite painful for your device. If you're using a desktop browser, you hardly will notice the differences.
+@TEXT:author
+KesieV

@@ -1,0 +1,43 @@
+@BRHTML:articleleft
+#toolname# includes a number of methods that can be used by widgets and, generally, by scripted elements for changing the current page, searching the destination page in a number of ways.
+Everything is done using the <i>widget.gotosheet</i> and <i>widget.gotopage</i> commands.
+<i>gotosheet</i> accepts three arguments, i.e. the destination section ID, the horizontal and vertical position of the destination point. All arguments can be blank for keeping the same section, article or page. The <i>horizontal</i> or <i>vertical</i> positions can be numbers or <i>up</i> and <i>down</i> for the <i>vertical</i> position and <i>left</i> or <i>right</i> for the <i>horizontal</i> one. Both of them can also be <i>top</i> or <i>bottom</i> for moving go the first or last article or page.
+<i>gotopage</i> jumps to a particular page ID in a given section, so will keep the links coherent also when the pages of tour magazine have been re-sorted.
+@BRHTML:articleright
+The web helped us to understand that informations gain value when linked one to each other and the reasons may be different from case to case.
+Sometimes informations need to be correlated for affinity of topic, that is the most common case. Probably, if your article is talking about <i>planets</i>, the reader may find interesting something about <i>mars</i>.
+Informations can also be linked for similiar category. An article about a <i>Van Gogh</i> and the videogame <i>Okami</i> for PS2/Wii probably seem unrelated, but both of two talks about <i>art</i>.
+Linked informations can also work like a <i>spotlight</i> on the main topic of the magazine or part of that, helping the reader on catching <i>the mood</i> of a stream of informations.
+Whatever is the reason of relating contents, digital magazines have to <i>link their data</i> in the same way the internet did - not just offering an index of the contents. Just with the visual elements peculiar to magazines.
+@BRHTML:boxtitle
+click on the boxes to jump to the related page
+@BRHTML:box1
+cover.
+@TEXT:box1image
+cover
+@TEXT:box1horz
+'top'
+@TEXT:box1vert
+null
+@BRHTML:box2
+left.
+@TEXT:box2image
+blackboards
+@TEXT:box2horz
+'left'
+@TEXT:box2vert
+null
+@BRHTML:box3
+down.
+@TEXT:box3image
+geohubpage
+@TEXT:box3horz
+null
+@TEXT:box3vert
+'down'
+@BRHTML:box4
+credits.
+@TEXT:box4image
+credits
+@TEXT:box4page
+'credits'

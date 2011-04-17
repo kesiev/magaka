@@ -1,0 +1,1 @@
+<?php header("Content-type: text/cache-manifest"); readfile("SAMPLEMAGAZINE0.cache") ?>

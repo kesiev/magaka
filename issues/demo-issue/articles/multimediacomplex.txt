@@ -1,0 +1,60 @@
+@BRHTML:article
+Probably you have already heard something about the wonders of <i>HTML5</i>. Thanks to the freshly added <i>canvas</i>, <i>video</i> and <i>audio</i> tags web pages can be something more like an application than a sheet of paper.
+While most of the features of #toolname# uses classic HTML/JS techniques for moving the magazine, some of the widgets already used the <i>canvas</i> tag, like in the <i>draw your face</i> page with its <i>blackboard</i> widget. In this page you can find a pair of audio players that makes use of the <i>audio</i> tag, thanks to the <i>audioclip</i> plugin. You can hear two of the musics I've used for the short games I've created for testing and showing some of the <i>Akihabara framework</i> capabilities.
+The <i>Akihabara framework</i> is based on the <i>canvas</i> tag for making videogames and has a wide range of device compatibility, from web browser to the <i>Internet channel</i> of Nintendo Wii. If <i>Akihabara</i> and <i>#toolname#</i> can look really different on their purposes, they share a lot of things. Indeed modern magazines are slowly reaching the same interaction or structure of a videogame.
+The proof is in the source code of this engine, where many well-known algorythms and approximations commonly used in videogames and webpages have been used for <i>#toolname#</i>.
+
+Enough with chit chat, let's go back to <i>#toolname#</i>.
+Each element of the magazine can broadcast signals to all the others. There are some standard signals, like <i>onpageshow</i> and <i>onpageleave</i> that are triggered when a page is shown or left the main view, or customized one.
+Events are really useful for making widgets and elements work together: the two audio players you can find on this page toggle each other. When started, they broadcast a customized <i>onmediastarting</i> event just before starting. On that event, all the players on the page <i>except the sender</i> stops themself, leaving just one active player on the page. Funny, huh?
+Standard events can be received not only by widget but from any of the DOM elements, in the same way you catch the other DOM events like <i>onclick</i>.
+@BRHTML:article2
+Just like the last article, this one is spanned on two pages but this one reserves a little surprise.
+If you're watching this on <i>landscape</i>, probably you've seen the images and audios on the first page and some new gadgets on this one - we will talk about them later. If you're watching this on <i>portrait</i> you have seen a special version of these pages: a <i>text only</i> view of the full article.
+This <i>text only</i> view is not a special page but follows the schema I've already explained: the <i>landscape</i> and <i>portrait</i> views are totally different and custom made, like in the <i>spin the wheel</i> article. The trick is that, unlike the previous pages, the first and second page of this article are sharing the same <i>placeholders file</i>. This file has the two parts of the article splitted in two different placeholders called <i>article</i> and <i>article2</i> that are showed alone in the <i>landscape</i> pages and enqueued in the <i>portrait</i> page.
+The result is the classic <i>rich portrait and text landscape</i> standard that many digital magazines adopted.
+The <i>portrait</i> pages, unlike the other pages, scrolls up and down instead of switching page and becomes handy when you need to show a lot of plain text.
+The widgets shown in this page are a <i>youtube video</i> embedded using the HTML5 way, so it can be visible on non-Flash devices like iPad.
+Then there is another <i>audio player</i>. Note that the audio and the video player toggle each other, since both of them handle the <i>onmediastarting</i> event described before.
+With the help of some <i>uncommon CSS attributes</i>, it is possible to add pseudo-3D effects too (for now, only on Webkit browsers only) like in the first question of the music quiz.
+The second one shows how it is possible to play with the parameters of the built-in widgets. I've made a <i>scatch'n'win</i> widget for the second question just changing the foreground and background color of the <i>blackboard widget</i> used on the <i>draw your face</i> article.
+On the portrait version of this page there is a <i>drawer</i> widget that works well with scrollable pages: the widget allows to switch between two child nodes when clicked, eventually resizing the page if the height is changed. I've created a box that shows some highlights of the interactive version of the page that can be opened and closed.
+All the widgets were made just for benchmarking some capabilities - I'm sure that you can do better, with some Javascript, HTML and CSS magic.
+@TEXT:author
+KesieV
+@TEXT:photo1
+tlol
+@BRHTML:phototext1
+<i>The Legend Of Sadness</i> is a tribute to my favourite action-RPG <i>Zelda</i>.
+@TEXT:photoinfo1
+The Legend Of Sadness, an HTML5 game example of the Akihabara framework.
+@TEXT:photo2
+akibahero
+@BRHTML:phototext2
+Is a rhythm game in HTML5 possible? <i>Akiba Hero</i> helped me to find the answer. It is <i>yes</i>.
+@TEXT:photoinfo2
+Akiba Hero, a reproduction of a famous game using the HTML5 audio and canvas tag.
+@TEXT:audio1
+tlol-intro
+@HTML:audiostoppedtext1
+The intro of <i>The Legend Of Sadness</i>
+@HTML:audioplayingtext1
+Song by Robert Jaret &copy;2010
+@TEXT:audio2
+fifthmarkup-mix
+@HTML:audiostoppedtext2
+The Test Song of <i>Akiba Hero</i>
+@HTML:audioplayingtext2
+Song by Arnaldo Brenna &copy;2010
+@BRHTML:videotext
+A video of some early test of <i>Akiba Hero</i> played with a <i>well known</i> plastic controller.
+@TEXT:audioguess
+fifthmarkup-mix
+@BRHTML:question1
+Who is the author of this song?
+@BRHTML:answer1
+Arnaldo Brenna
+@BRHTML:question2
+do you remember the title?
+@BRHTML:answer2
+The Test Song

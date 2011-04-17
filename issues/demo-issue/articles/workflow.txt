@@ -1,0 +1,32 @@
+@TEXT:title1
+Raster warrior
+@BRHTML:body1
+Make the pages of your magazine with your favorite tool, export them as image files and add the widgets over the rasterized pages. Fast and compatible.
+@TEXT:title2
+Teamwork
+@BRHTML:body2
+Your designer will make the page template file in HTML adding placeholders for the contents and your writer will put together the article in plain text in another one. #toolname# will put everything together.
+@TEXT:title3
+HTML Junkie
+@BRHTML:body3
+Your designer will make the full page in HTML, with a relatively complex layout built around the text.
+@TEXT:title4
+Mass Production
+@BRHTML:body4
+The page template is an external HTML and the some fixed placeholders are into the magazine definition file (like the article or magazine names etc.). Or vice versa.
+@TEXT:title5	
+Compact
+@BRHTML:body5
+The page template and the placeholders are in the issue definition file, all in one
+@TEXT:title6
+Nerdcore
+@BRHTML:body6
+The placeholderless HTML page is in the issue definition file. No loading time. Virtually instant.
+@BRHTML:article
+You probably want to integrate some kind of workflow in your magazine production.
+<b>Do you already have an authoring tool?</b> You can try the <i>raster warrior</i> way. Just make some images with the same screen size of the device you're going to support and voila. You can specify different images for landscape and portrait views, so in that case make the page twice.
+<b>Do you prefer a more structured way?</b> Make a template file in HTML with a bunch of placeholders and a text file with the real contents. #toolname# will replace them accordingly. There are many kinds of placeholders, like navigation related ones like <i>"this is the #horizontal# article of #horizontalcount# at page #vertical# of #verticalcount# and this page is shown in #orientation#"</i>, article related like <i>"You're reading #articletitle#, #articlesubtitle#"</i>, section related <i>"The current section is #sectiontitle#, #sectionsubtitle# and has this ID in the issue file: #sectionid#"</i>, magazine related like <i>"You're reading #magazinetitle# number #magazinenumber#"</i> and system related, like <i>"This magazine was provided by #toolname#, that is #toollicense# licensed and the issue path is #bundlepath#"</i>.
+There are many ways to create custom placeholders too: this article has been placed in the page using this kind of workflow and uses a preset of not-system placeholders applied to the page template, called <i>title</i>, <i>article</i> and so on. Switching from #orientation# to #otherorientation#, another brand-new template will be used but with the same placeholders. Long story short, you can provide any HTML content from the pages that can be auto-adaptable (aka <i>fluid layouts</i>) or multiple layouts for landscape and portrait pages.
+Want to discover more scenarios? Give a spin to the wheel on this page: every box have a little hint about.
+@TEXT:author
+KesieV

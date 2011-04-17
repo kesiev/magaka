@@ -1,0 +1,25 @@
+@BRHTML:article
+You know that KesieV is a serial inventor, don't you? He creates things, donate it to humanity and suddenly starts creating something new: ok, it seems that he has the complex of the monotheistic's god, uh!
+Anyway, this Magaka is a big hit: it's not that I don't like Akihabara or 
+Meltingbot (I love them) but I've this idea that Magaka is freaking good and beats them all.
+I love this thing that Magaka looks at the future of online publishing simply and literally by embodying it: is cross platform for device diversity (we'll have more and more in the future), is dynamic and realtime to be always up to date, and it's context sensitive to deliver surprises and interact with emotions.
+Don't you think so?
+Magaka is the framework I was looking for to build my online magazine (because yes, I want to do it, stay tuned).
+There's only one problem though: I'm not familiar at all with CSS and jscript programming (I'm one of those slideware persons, alas) and so I absolutely need some sort of help when dealing with the lower layers. Lower respect to content, I mean.
+I'm sure I'm not the only one in the world that loves Magaka and digital publishing and would use it if we succeed to make it easy.
+Think Magaka with a deadly simple theme manager (for example for technology oriented magazines, music fanzines, tourism catalogues, real estates publications, etc...) plus a scalable SaaS hosting platform and a plugin friendly architecture.
+Ta da! Designed for me. And you?
+Don't forget also that Magaka, beyond being fantastic, is Free (as in "free speech") and not only open.
+Doesn't seem like a new and cooler wordpress?
+Would you adopt it to create your digital magazine? I would love to do so!
+@TEXT:author
+Simone Cicero
+@URL:whophoto
+simone.jpg
+@BRHTML:whotitle
+Simone Cicero
+@BRHTML:whobio
+I’m Simone Cicero: a networker, Blogger, strategist and wannabe journalist. I’m passionate about innovation and Freedom. And a big fan of the right side of my brain.
+I take a look to the world from the place I live in, the ethernal city, Rome.
+If you want to contact me:
+View Simone Cicero's profile on LinkedIn (http://www.linkedin.com/in/simonecicero) or simply drop an email to simone.cicero at gmail. 

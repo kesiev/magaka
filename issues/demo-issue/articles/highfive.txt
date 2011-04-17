@@ -1,0 +1,21 @@
+@BRHTML:article
+#toolname# uses some of the new HTML5 features and some <i>platform-dependant</i> functions for adding neat features to your magazines.
+On your <b>iPhone or iPad devices</b> will act like a native app if added as a bookmarklet (pressing the + button on the bar and hitting <i>Add to Home Screen</i>): a new icon will appear on the user springboard.
+A customizable splash screen will appear when the magazine is opened but the most nice feature is surely the <b>downloadable magazines</b>.
+Thanks to the <i>offline storage specifications</i> of HTML5, some or all the data of the magazine can be stored offline - that means that your magazine will be readable on-the-go without any connection.
+Magazine content, widgets and engine can be update simply updating an index file of the offline resources, called <i>manifest</i> - all the installed instances will automatically self-update.
+<i>That's all?</i> Absolutely not: HTML5 and CSS3 have been used for other widgets in this magazine and it is a standard that is shaping up fast, so get ready for <i>accelerometers</i>, <i>multitouch</i>, <i>GPS</i> and much more. Just keep the eyes open and create!
+@TEXT:author
+KesieV
+@TEXT:photo0
+photo0
+@BRHTML:text0
+If added as bookmarklet, the magazine looks like a <b>native app</b> on Apple devices.
+@TEXT:photo1
+photo1
+@BRHTML:text1
+You can add a <b>splash screen</b> for every issue of your magazine.
+@TEXT:photo2
+photo2
+@BRHTML:text2
+You can read a magazine <b>even offline</b> on all HTML5 capable browsers, desktop included.

@@ -1,0 +1,23 @@
+@BRHTML:article
+When KesieV asked me an article for #magazinetitle#, I was really unsure about what subject dealing with, because I am far from being an expert on web technology. But the theme of digital publishing suggested me a consideration about the new opportunities web could offer also to literary promulgation.
+Everybody has the right of expression, the right to communicate in every personal way to other his own visions, bright and colourful or just grey scale ones.
+Every man who desires sharing even one of his ideas, one of his deep feeling is like a thrower of stones over the sea. When the stone will meet the water, wonderful circles will spread from it. What a satisfaction if another could enjoy the show!
+In the last years to all the throwers has been given a great chance, I guess, because with Internet it is born a free field of communication.
+Blogging, social network, forum - everybody seems to have found his own little or big space to cry to other: "Hey, guys! Here I am!".
+But IMHO there are still so many empty spaces to fill and literary expression must still find its new dimension, its new role in the Web era.
+We are talking about a really different way of distribution from that of traditional press. Web it's not simply an easy or temporary solution, it is a brand new contest of relation with readers.
+It allows a creative exploration of multimedia message that other arts, such as music, graphics, cinematic and so on, have already begun; it creates a more direct bond between writer and reader, where no external intermediary between literary work and its users has needed, if not readers taste or their pass the word.
+It is dangerous, it is risky, but it is a simplification that will permit a purer connection and a real freedom of choice.
+So I hope that soon literary world would be able to understand the chances given to it and to offer back something really innovative, maybe just using the great potential of #toolname# project by KesieV.
+...And please let me know of any possible web original literary idea on Web, so that I could immediately change my opinion.
+@TEXT:author
+Bianca
+@URL:whophoto
+bianca.jpg
+@BRHTML:whotitle
+Bianca is Bianca Brenna
+@BRHTML:whobio
+Bianca is a literature lover and a wannabe writer.
+When she met KesieV, she discovered the mysterious world of computer science, web space and videogame intense esperience.
+Starting from these imagery fields, she had the idea to write a cyberpunk novel, which, when it will be done, will be free readable on Web.
+And yes, first of all, she is KesieV's GF.

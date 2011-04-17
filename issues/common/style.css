@@ -1,0 +1,625 @@
+/*
+ * The top bar CSS
+ */
+.gui-bar {
+	background-color:rgba(0,0,0,0.8);
+	color:white;
+	border-bottom:5px solid #FF6A00;
+
+	padding:10px 10px 0px 10px;
+	-moz-box-shadow: 0px 0px 4px #000;
+	-webkit-box-shadow: 0px 0px 4px #000;
+	box-shadow: 0px 0px 4px #000;
+}
+
+.gui-bar .articlebox {
+	position:absolute;
+	left:30px;
+	top:40px;
+}
+
+.gui-bar .buttonbox {
+	position:absolute;
+	top:10px;
+	right:30px;
+}
+
+.gui-bar .pagebox {
+	position:absolute;
+	right:30px;
+	top:40px;
+	font-size:10px;
+	line-height:18px;
+	font-family:Helvetica;	
+}
+
+.gui-bar .magazinetitle {
+	font-size:20px;
+	line-height:18px;
+	font-family:Helvetica;
+	font-weight:bold;
+}
+
+.gui-bar .magazinenumber {
+	font-size:18px;
+	line-height:18px;
+	font-family:Helvetica;
+}
+
+.gui-bar .magazinearticletitle {
+	font-size:10px;
+	line-height:18px;
+	font-family:Helvetica;
+	font-weight:bold;
+}
+
+
+.gui-bar .magazinearticlesubtitle {
+	font-size:10px;
+	line-height:18px;
+	font-family:Helvetica;
+}
+
+.gui-bar .sectiontitle {
+	font-size:10px;
+	line-height:18px;
+	font-family:Helvetica;
+	background-color:#FF6A00;
+	padding:2px 10px 2px 10px;
+	margin-right:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+
+/*
+ * The extra bar CSS
+ */
+
+.extra-bar {
+	background-color:rgba(0,0,0,0.8);
+	color:white;
+	border-top:5px solid #FF6A00;
+	
+	padding:10px 10px 0px 10px;
+	-moz-box-shadow: 0px 0px 4px #000;
+	-webkit-box-shadow: 0px 0px 4px #000;
+	box-shadow: 0px 0px 4px #000;
+
+}
+
+.extra-bar .thumbbox {
+	float:left;
+	width:230px;
+	padding-right:10px;
+}
+
+.extra-bar .thumbbox .title {
+	font-size:20px;
+	line-height:30px;
+	font-family:DiavloBook;
+}
+
+.extra-bar .thumbbox .thumb {
+	float:left;
+	margin-right:5px;
+}
+
+.extra-bar .thumbbox .description {
+	font-size:10px;
+	line-height:18px;
+	font-family:Helvetica;
+}
+
+/* MINI version */
+
+.extra-bar .minithumbbox {
+	float:left;
+	width:230px;
+	padding-right:10px;
+}
+
+.extra-bar .minithumbbox .title {
+	font-size:16px;
+	line-height:24px;
+	font-family:DiavloBook;
+}
+
+.extra-bar .minithumbbox .thumb {
+	float:left;
+	margin-right:5px;
+}
+
+.extra-bar .minithumbbox .description {
+	font-size:10px;
+	line-height:14px;
+	font-family:Helvetica;
+}
+/*
+ * Default page CSS
+ */
+.page {
+	background-color:white;
+}
+
+/*
+ * Default modal CSS
+ */
+.modalbox {
+	background-color:black;
+}
+
+/*
+ *
+ * CUSTOM DESIGN FOR "SAMPLE MAGAZINE".
+ * These are not related with the browsing software. Are used by the single pages.
+ *
+ */
+ 
+/* Page style */
+
+.defaultcolumns { 
+	-moz-column-rule: 1px solid black;
+	-moz-column-width:180px;
+	-moz-column-gap:20px;
+	-webkit-column-rule: 1px solid black;
+	-webkit-column-width:180px;
+	-webkit-column-gap:20px;
+	-o-column-rule: 1px solid black;
+	-o-column-width:180px;
+	-o-column-gap:20px;
+	column-rule: 1px solid black;
+	column-width:180px;
+	column-gap:20px;
+}
+
+.linelesscolumns {
+	-moz-column-width:180px;
+	-moz-column-gap:20px;
+	-webkit-column-width:180px;
+	-webkit-column-gap:20px;
+	-o-column-width:180px;
+	-o-column-gap:20px;
+	column-width:180px;
+	column-gap:20px;
+}
+
+.defaulttitle {
+	font-family:DiavloBook;
+	font-size:50px;
+	margin:0px;
+	padding:0px;
+}
+
+.defaultsubtitle {
+	font-size:20px;
+	margin:0px;
+	padding:0px;
+	line-height:25px;
+	margin-bottom:10px;
+	font-family:DiavloBook;
+}
+
+.defaultfont {
+	line-height:18px;
+	font-size:14px;
+	font-family:Helvetica;
+}
+
+.defaultsmallfont {
+	line-height:18px;
+	font-size:10px;
+	font-family:Helvetica;
+}
+
+.authorbox {
+	font-family:DiavloBook;
+	border-width:0px 0px 0px 16px;
+	border-style:solid;
+	padding-left:5px;
+	border-color:#37485C
+}
+
+/* Eyecandy */
+
+.bigblackshadow {
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+	-o-box-shadow: 0px 0px 10px #000;
+	box-shadow: 0px 0px 10px #000;
+}
+
+.smallblackshadow {
+	-moz-box-shadow:0px 0px 5px #000;
+	-webkit-box-shadow:0px 0px 5px #000;
+	-o-box-shadow:0px 0px 5px #000;
+	box-shadow:0px 0px 5px #000;
+}
+
+.bigwhiteshadow {
+	-moz-box-shadow: 0px 0px 10px #fff;
+	-webkit-box-shadow: 0px 0px 10px #fff;
+	-o-box-shadow: 0px 0px 10px #fff;
+	box-shadow: 0px 0px 10px #fff;
+}
+
+.smallblacktextshadow {
+	-moz-text-shadow:0px 0px 5px #000;
+	-webkit-text-shadow:0px 0px 5px #000;
+	-o-text-shadow:0px 0px 5px #000;
+	text-shadow:0px 0px 5px #000;
+}
+
+.bigborderradius {
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	border-radius:10px;
+}
+
+.smallborderradius {
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+.hugeborderradius {
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	-o-border-radius:20px;
+	-border-radius:20px;
+}
+
+.bighalfborderradius {
+	-moz-border-radius:10px 0px 10px 0px;
+	-webkit-border-radius:10px 0px 10px 0px;
+	-o-border-radius:10px 0px 10px 0px;
+	border-radius:10px 0px 10px 0px;
+}
+
+.wideborderradius {
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	-o-border-radius:50px;
+	border-radius:50px;
+}
+
+.mfiverotation {
+	-moz-transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+}
+
+.ninetyrotation {
+	-moz-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	transform:rotate(90deg);
+}
+
+.mtwentyrotation {
+	-moz-transform: rotate(-20deg);
+	-webkit-transform: rotate(-20deg);
+	-o-transform: rotate(-20deg);
+	transform: rotate(-20deg);
+}
+
+.twentyrotation {
+	-moz-transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+	-o-transform: rotate(20deg);
+	transform: rotate(20deg);
+}
+
+
+.mtenrotation {
+	-moz-transform: rotate(-10deg);
+	-webkit-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+}
+
+.tenrotation {
+	-moz-transform: rotate(10deg);
+	-webkit-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	transform: rotate(10deg);
+}
+
+.mthirtyrotation {
+	-moz-transform: rotate(-30deg);
+	-webkit-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+	transform: rotate(-30deg);
+}
+
+.mthirtyrotation {
+	-moz-transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+
+.mfourtyrotation {
+	-moz-transform: rotate(-40deg);
+	-webkit-transform: rotate(-40deg);
+	-o-transform: rotate(-40deg);
+	transform: rotate(-40deg);
+}
+
+.msixtyrotation {
+	-moz-transform: rotate(-60deg);
+	-webkit-transform: rotate(-60deg);
+	-o-transform: rotate(-60deg);
+	transform: rotate(-60deg);
+}
+
+.fiftyrotation {
+	-moz-transform: rotate(50deg);
+	-webkit-transform: rotate(50deg);
+	-o-transform: rotate(50deg);
+	transform: rotate(50deg);
+}
+
+
+.mhundredrotation {
+	-moz-transform: rotate(-100deg);
+	-webkit-transform: rotate(-100deg);
+	-o-transform: rotate(-100deg);
+	transform: rotate(-100deg);
+}
+
+/* CSS Fiches */
+
+.fichesblue1 {
+	position:absolute;
+	left:0px;
+	top:5px;
+	width:100px;
+	height:100px;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	border-radius:50px;
+	background-color:#293645;
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+}
+
+.fichesblue2 {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100px;
+	height:100px;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	border-radius:50px;
+	background-color:#37485C;
+	border:1px solid #182029:
+}
+
+.fichesorange1 {
+	position:absolute;
+	left:0px;
+	top:5px;
+	width:100px;
+	height:100px;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	border-radius:50px;
+	background-color:#BD4F00;
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+}
+
+.fichesorange2 {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100px;
+	height:100px;
+	-moz-border-radius:50px;
+	-webkit-border-radius:50px;
+	border-radius:50px;
+	background-color:#FF6A00;
+	border:1px solid #8F3B00;
+}
+
+.ficheshalo {
+	position:absolute;
+	left:10px;
+	top:10px;
+	width:80px;
+	height:80px;
+	-moz-border-radius:40px;
+	-webkit-border-radius:40px;
+	border-radius:40px;
+	-moz-box-shadow: 0px 0px 10px #fff;
+	-webkit-box-shadow: 0px 0px 10px #fff;
+	border:1px solid #ffffff;
+}
+
+.fichestext {
+	left:32px;
+	top:47px;
+	position:absolute;
+	color:#ffffff;
+	font-size:40px;
+	letter-spacing:-3px;
+}
+
+/* MINI Page style */
+
+.minidefaultfont {
+	line-height:14px;
+	font-size:12px;
+	font-family:Helvetica;
+}
+
+.minidefaultsmallfont {
+	line-height:18px;
+	font-size:8px;
+	font-family:Helvetica;
+}
+
+/* The blackboard page in portrait */
+.page-portrait-blackboards .leftside {
+	background-color:white;
+	color:black;
+}
+.page-portrait-blackboards .rightside {
+	background-color:black;
+	color:white;
+}
+
+.page-portrait-blackboards .leftwidget {
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+}
+
+.page-portrait-blackboards .rightwidget {
+	-moz-box-shadow: 0px 0px 10px #fff;
+	-webkit-box-shadow: 0px 0px 10px #fff;
+}
+
+/* The blackboard page in landscape */
+
+.page-landscape-blackboards .leftside {
+	background-color:black;
+	color:white;
+}
+
+.page-landscape-blackboards .rightside {
+	background-color:white;
+	color:black;
+}
+
+.page-landscape-blackboards .leftwidget {
+	-moz-box-shadow: 0px 0px 10px #fff;
+	-webkit-box-shadow: 0px 0px 10px #fff;
+}
+
+.page-landscape-blackboards .rightwidget {
+	-moz-box-shadow: 0px 0px 10px #000;
+	-webkit-box-shadow: 0px 0px 10px #000;
+}
+
+/* The brightboard */
+
+.page-brightboard .title {
+	background-color:black;
+	color:white;
+	line-height:100px;
+	font-size:100px;
+}
+
+.page-landscape-brightboard .brightbox {
+	background-image:url('../demo-issue/images/brightcheck.png');
+}
+
+
+.page-portrait-brightboard .brightbox {
+	background-image:url('../demo-issue/images/darkcheck.png');
+}
+
+.page-portrait-brightboard .textbox {
+	-moz-box-shadow: 0px 0px 10px #fff;
+	-webkit-box-shadow: 0px 0px 10px #fff;
+	box-shadow: 0px 0px 10px #fff;
+}
+
+
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on November 21, 2010 */
+/* A font by Jos Buivenga (exljbris) -> www.exljbris.com */
+
+@font-face {
+	font-family: 'DiavloBook';
+	src: url('fonts/diavlo_book_ii_37-webfont.eot');
+	src: local('☺'), url('fonts/diavlo_book_ii_37-webfont.woff') format('woff'), url('fonts/diavlo_book_ii_37-webfont.ttf') format('truetype'), url('fonts/diavlo_book_ii_37-webfont.svg#webfontP0iuhhbZ') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Rollindex CSS */
+/* Based on: http://kuler.adobe.com/#themeID/1093121 */
+
+.rollindex-default .background {
+	background-color:#91A685;
+}
+
+
+.rollindex-default .scrolly {
+}
+
+.rollindex-default .scrollybox .column .thumb {
+	float:left;
+	clear:both;
+}
+
+/* sections */
+.rollindex-default .sectionbar {
+	padding-left:10px;
+}
+
+.rollindex-default .sectionbar .section {
+	float:left;
+	background-color:#D9D7AD;
+	padding:5px;
+	margin:10px 5px 0px 5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	color:#91A685;
+	font-family:DiavloBook;
+	white-space:nowrap;
+}
+
+.rollindex-default .sectionbar .section-selected {
+	background-color:#37485C;
+}
+
+/* sidebar */
+.rollindex-default .sidebar {
+	background-color:#1C232E;
+}
+
+.rollindex-default .sidebartext {
+	color:#91A685;
+	font-family:DiavloBook;	
+	padding-bottom:10px;
+	border-bottom:10px solid #FF6A00;	
+}
+
+.rollindex-default .sidebartext .articletitle {
+	font-size:25px;
+	padding-bottom:10px;	
+}
+
+.rollindex-default .sidebartext .articlesubtitle {
+	font-size:12px;
+}
+
+
+.rollindex-default .sidebarsectiondetail {
+	color:#91A685;
+	font-family:DiavloBook;	
+}
+
+.rollindex-default .sidebarsectiondetail .sectiontitle {
+	font-size:30px;
+	padding-bottom:10px;
+}
+
+.rollindex-default .sidebarsectiondetail .sectionsubtitle {
+	font-size:12px;
+}
+
+.rollindex-default .arrowup {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid #1C232E;	
+}

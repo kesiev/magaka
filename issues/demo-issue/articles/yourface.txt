@@ -1,0 +1,10 @@
+@BRHTML:article
+The world is passing from paper publishings to their digital versions. In many cases are just the same thing, with an image viewer sticked on it that shows - in the best cases - extra contents placed over it using a variety of buttons or tricks, like sensible areas with galleries, movies and so on. These unobtrusive ways of enriching pages keeps that <i>analog feeling</i> that readers love.
+Darest editors decided to build ground up their magazines for digital publishing and, in most of the cases, focusing on tablets. Interactive contents appeared side by side to classic medias like video and audio.
+Personally I think that a <i>print revolution</i> have to start from the beginning, leaving behind the old concept, limits and structures of the printed paper, thinking again on how the contents have to be shown and linked together.
+But, if this last sentence is quite suggestive and unoriginal, is pretty void too: this <i>print revolution</i> started years ago, when the web pages became a standard for showing and spreading informations. The concept of <i>article spanned on more pages</i> is disappeared and the <i>anchors</i> replaced successfully the old good index concept, linking all the informations together for real - to informations inside the same site or outside.
+Mixing together all these points of view, all good but not self sufficient, I've decided to create <i>#toolname#</i>: a mix of analog feeling, modern interactive content, web technologies and web-page styled navigation. Is this a <i>world changer</i>? Is this the reason I've decided to put #toolname# together? No, this is just a nerdy test for checking if another point of view is possible.
+But since #toolname# is <b>free</b> and <b>opensource</b>, if everything fails, at least you'll be able to make a modern styled magazine without spending a buck and tell what you want.
+And, the best part, since is all-yours, it <b>can have your face on it</b>. Just draw it.
+@TEXT:author
+KesieV

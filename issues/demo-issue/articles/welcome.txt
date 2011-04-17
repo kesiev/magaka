@@ -1,0 +1,15 @@
+@BRHTML:article
+First of all, thank you for giving a look to #toolname#. This is my personal experiment to make a modern interactive magazine platform using only web technologies, such like <i>HTML</i>, <i>Javascript</i> and <i>CSS3</i>.
+At this moment I'm going to put together the pieces I've built in last two weeks: the page viewer is mostly done and the index page, that is reachable <i>double tapping this page</i>, is fully working so I'm going to optimize as much as possible what I've already coded.
+Just after testing the cover, the first thing I can tell you is a <i>bad one</i>, but it is something that you'll probably already noticed: the iPad performances on pages filled with text like this one is not cool as I expected but it is a very minor point, since - as you will see in this issue of <i>#magazinetitle#</i> - you will be able to rasterize all the pages and show a simple image, adding animated widget wherever you want. Moreover, I'm very confident on performances boosts on newer devices, since everything works fawlessy on desktop version of browsers. Yes, it is the same good old story.
+I <i>love</i> to give the bad news at start, but since they are over, let's start with the <i>good ones</i>. I've said <i>animated widget</i>. You're reading just the top of the babel tower I've put together, just for answering to the question I'm asking to myself in these last two weeks: <i>since many iPad magazine are using HTML parts to animate pages, Is it possible to use HTML for the main viewer too? And how far is it possible to go?</i>
+Keep in mind that this is my main target, so <i>#magazinetitle#</i> issue #magazinenumber# is going to be a stress test of the technology I've put together, so wish us good luck! (Yes, <i>us</i>... me and your device!)
+Do you want to check by yourself what is going on in this and the other pages? Well, just have a look to the sources, since <i>#toolname#</i> and <i>#magazinetitle#</i> are both <b>#toollicense#</b> licensed.
+You'll figure out that this page is still very complex: it uses the <i>multiple external template engine</i>, that allows pages made with multiple layers on splitted files one on top of another (you will see the page borders on many other pages of this magazine - it is the same template <i>sticked</i> on top of the content layer, with the article body, the title <i>"#articletitle#"</i> and the subtitle <i>"#articlesubtitle#"</i> in it).
+It uses the <i>global placeholders</i> showing the same article attributes everywhere is needed, the <i>page placeholders</i> allowing multiple page templates with different contents and <i>external page contents</i> putting out from the page the logical content of the article.
+There is a lot more so... let's start! But first, <b>have a look to the credits</b> below this page (drag it up) before testing <i>#toolname#</i>!
+<i>PS: Since it is not a real magazine but more a tech demo, we will meet again for more rants. And also keep in mind that I'm a programmer and not a designer, so please... be clement with my page layouts!</i>
+@BRHTML:article2
+#magazinecredits#
+@TEXT:author
+KesieV

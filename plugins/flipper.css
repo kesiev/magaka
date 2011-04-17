@@ -1,0 +1,42 @@
+.flip-container {
+	-webkit-perspective: 900;
+}
+.flip-card {
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 1.5s;
+	position:relative;
+}
+.flip-card-fixed {
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition-property: -webkit-transform;
+	position:relative;
+}
+.flip-card.flipped {
+	-webkit-transform: rotateY(180deg);
+}
+.flip-card-face {
+	-webkit-backface-visibility: hidden;
+	width:100%;
+	height:100%;
+}
+.flip-card-front {
+	position:absolute;
+}
+.flip-card-back {
+	-webkit-transform: rotateY(180deg);
+}
+
+/* compatibility mode */
+
+.compat-front {
+	display:block;
+}
+.compat-back {
+	display:none;
+}
+.compat-face {
+	-webkit-backface-visibility: hidden;
+	width:100%;
+	height:100%;
+}

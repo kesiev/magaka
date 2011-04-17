@@ -1,0 +1,8 @@
+/*
+	CSS for compatibility mode with HTML5 specs.
+*/
+
+html,body {
+	width:100%;
+	height:100%;
+}

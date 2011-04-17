@@ -1,0 +1,11 @@
+@BRHTML:article
+#toolname# includes a set of tools and debug modes that can be toggled from the <i>browse.js</i> file for helping you on the dirty work: try to call this page adding <i>tool=help</i> parameter to the URL. The listed tools will work on the current loaded issue.
+The <i>skipdelays</i> tool will speed up your magazine reviews skipping the <i>startup benchmark</i> and other pauses while browsing.
+<i>Rasterize</i> tool will help on rasterizing the whole magazine. As I said, the <i>rasterized version</i> of the static contents of your magazine will be faster than the rendered one and, while losing flexibility, can help slower devices. The <i>rasterize</i> tool will guide you on producing the images of your pages and on updating <i>issue.js</i> accordingly.
+<i>Thumbnailer</i> works like the <i>rasterize</i> but will produce smaller images of your pages, that can be used for displaying thumbs of the pages and for the <i>rollindex</i> plugin.
+<i>Index</i> will show all the pages, whatever are used into the magazine or not and will give you a link to the page thumbnail or the single page view. The single page view is crucial while composing a page template, since your browser will show a magazine page as stand-alone so, refreshing the current page, you can check changes in real time.
+<i>Offline</i> will help on creating a proper <i>manifest</i> file for making your magazine readable offline.
+The first object in this pages is a button, that is just a DIV with the <i>onobjecttap</i> event defined, that will popup in fullscreen the <i>infiniboard</i> widget, i.e. an unlimited surface with clickable areas. It can be used as a <i>wall index</i> that wraps the reader around the contents or as a big gallery since, like the other widget, can be displayed in DIVs too.
+The second one is the <i>pagelocker</i> widget that will lock/unlock the navigator. Page locking is useful when showing an animation before leaving the page or for preventing unwanted dragging on widget-crowded pages.
+@TEXT:author
+KesieV

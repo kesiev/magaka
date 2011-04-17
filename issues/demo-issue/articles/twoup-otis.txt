@@ -1,0 +1,32 @@
+@BRHTML:article
+Dopo un po di tempo che mi dedico alla così detta editoria digitale sono arrivato a una conclusione che l'editoria digitale non esiste.
+Il perché è presto detto. Dopo che Steve Jobs ha presentato l'iPad tutti anno gridato alla fine dell'editoria tradizionale e l'inizio dell'era digitale in uno dei settori più conservatori qual'è l'editoria.
+Dall'invenzione di Gutenberg del 1440 ben poco è cambiato. Sono cambiati gli strumenti. La redazione di un prodotto editoriale avviene in maniera digitate, con strumenti digitali: software sempre più sofisticati hanno preso il posto dei caratteri metallici da inchiostrare. Si produce uno o più file da inviare allo stampatore. A quel punto succede una cosa strana. Il prodotto digitale fa un salto indietro nel tempo e torna alle rotative come 700 anni fa.
+Il risultato qual'è? Ancora carta stampata: libri, riviste, giornali.
+Vero è che esistono anche altri canali di distribuzione più moderni. Internet e mobile in primis. Il formato pdf ormai è consultabile ovunque. E qui nasce l'errore. Si usa in questi casi un il neologismo e-book digitale. 
+Alt facciamo un passo indietro.  Ma il processo è esattamente lo stesso per produrre la versione cartacea. Allora dove sta la differenza tra digitale e cartaceo? In che modo un e-book da un valore aggiunto dato dall'essere digitale? A me puzza tanto di regalo (quando gratuito) riciclato. 
+Con un pdf reader si possono mettere i segnalibri, ma anche nel cartaceo. Si può zoomare il testo, e quanti portatori di occhiali saranno resi felici per questo. Mio nonno alla sua veneranda età di 80 e passa anni leggeva lo stesso. Perché era interessato al contenuto e non al formato. Il pdf però ha una cosa in più del cartaceo: la ricerca per parola. Ok +1 per la versione digitale. Si trattasse si un dizionario o un manuale capirei, ma mi spiegate se sto leggendo un libro o un romanzo, a che mi serve cercare tutte le ricorrenze di una parola. Non aggiunge nulla di nuovo al contenuto, non lo rende più interessante.
+Per questo mi viene quasi da sorridere quando un editore si presenta nel mio lavoro con un pdf e chiede di pubblicare la versione digitale su iPad o sul tablet del momento.
+@BRHTML:article2
+"Però poi gli aggiungiamo i contenuti extra per renderla più accattivante". I contenuti extra.
+Quante volte ho sentito questa parola come la magia che trasforma un comune pdf nella versione digitale del libro o della testata. Sono un plus dato dall'avere un device multimediale tra le mani. Un lusso da concedere a chi preferisce la versione &quot;digitale&quot; a quella cartacee. Ma queste cose non esistevano già nel web o se andiamo indietro di qualche anno nei CD-ROM? No. Non è editoria digitale questa.
+Cos'è allora l'editoria digitale? L'editoria digitale è un aggregato di contenuti che deve essere concepito digitale, nascere e morire digitale. Da questo punto di vista sono più digitali un sito web e un CD-ROM. Però ne un sito web ne un CD-ROM si possono portare e consultare come un libro. In questo la carta stampata è ancora imbattibile.
+La seconda domanda che nasce spontanea è quella con cui ho aperto: esiste oggi l'editoria digitale? La risposta è sempre no. Però alla provocazione iniziale voglio aggiungere qualcosa.
+E' vero l'editoria digitale non esiste ancora, gli editori non sono ancora in grado di trasformare le loro redazioni in modo da creare un prodotto interamente digitale. Per creare una prodotto digitale non basta più sapere scrivere e fare grafica, sono necessarie competenze multimediali e tanta, davvero tanta creatività per uscire dagli schemi del semplice testo incolonnato in mezzo a qualche immagine.  
+Detto questo però è innegabile che con l'avvento dei tablet in questa particolare fase storica le cose stanno cambiando qualcosa di nuovo sta nascendo. iPad ha dato una notevole spinta in questo senso grazie all'usabilità semplificata dall'uso della tecnologia multitouch. Per cominciare a muovere i primi passi l'editoria digitale aveva bisogno di questa tecnologia perché un libro lo tocchi, giri le pagine. E in questo i dispositivi touch hanno fatto passi da gigante. Vari esperimenti sono nati grazie ad iPad. Esistono infatti riviste pensate e create per essere digitali. Ma sinceramente le trovo molto complicate da usare, poco intuitive e ottimizzate solo per iPad, e questo è un punto debole non da poco. Infatti tanti tablet concorrenti stanno arrivando e pochi sono pronti alla portabilità.
+Questo numero demo del progetto opensource di KesieV sul quale ho l'onore di scrivere è un esempio di quello che io intendo per editoria digitale. Qualcosa di giovane, frizzante, innovativo e coinvolgente, ma che strizza l'occhio alla carta stampata. Non disorienta (esperimento dell'indice a parte), e' subito famigliare e intuitivo, come solo un libro/rivista cartaceo può essere. Lo puoi consultare come una rivista normale, ma per i più smaliziati è possibile anche approfondire e sfruttare funzionalità meno visibili che si possono scoprire nel tutorial iniziale.
+La genialità di questo progetto è che sa riutilizzare la tecnologia web e sfruttarla per l'editoria come nessun altro fa. Usare tecnologia web significa che una rivista realizzata con questo framework può essere letta su qualsiasi device che abbia un browser...Cioè praticamente ovunque...E gli alberi ringraziano...Scusate se è poco!!
+Auguri KesieV per questo progetto.
+@TEXT:author
+[Oti'S]
+@URL:whophoto
+otis.jpg
+@BRHTML:whotitle
+Oti'S is Otilio Forlanelli
+@BRHTML:whobio
+Otilio Forlanelli è un ragazzo (mi considero ancora tale) di trentadue anni. Sono nato in El Salvador, un piccolo stato del centro america, in un periodo in cui il paese era sconvolto da una guerra civile tra le peggiori e tra le più dimenticate dal resto dal mondo.
+Io oggi sono un ingegnere informatico, laureato presso il Politecnico di Milano (nel marzo 2007). Ho conseguito questa laurea mentre lavoravo per questo è così recente. Diciamo che è una laurea sudata e raggiunta nel tempo libero.
+Per il futuro ho svariati progetti che probabilmente mi porteranno ad avviare un’attività vera e propria. 
+Ho un sacco di lavoro da fare, ma la cosa non mi spaventa, non mi ha mai spaventato.
+@TEXT:photo
+media/gutenjobs.jpg

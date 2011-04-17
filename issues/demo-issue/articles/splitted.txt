@@ -1,0 +1,17 @@
+@BRHTML:titleleft
+Is this black?
+@BRHTML:titleright
+This is black.
+@BRHTML:subtitleleft
+Are just points of view.
+@BRHTML:subtitleright
+Just try the other one.
+@BRHTML:squareleft
+A blackboard for a white chalk. Cut the white with the black.
+@BRHTML:squareright
+A blank piece of paper for a black pen. Cut the black with the white.
+@BRHTML:articleleft
+Clicking on the rectangles, the already used <i>blackboard</i> widget is opened on a modal view. Widgets can detect if are shown in full screen and, eventually, show some extra hud element, like the close button on the top right of the drawable surface.
+Note that the boxes aren't widgets and the code for opening the two modals is inline on the tags of the buttons, using the <i>onobjecttap</i> event, optimized for mouse and touch screens.
+@BRHTML:articleright
+Switching from #orientation# to #otherorientation# the two black and white areas of this page are reverted. There isn't any double-HTML on this page: pages also have different <i>class names</i> when shown in portrait and landscape so you can change the page layout acting just on the CSS sheet and class names dependencies.

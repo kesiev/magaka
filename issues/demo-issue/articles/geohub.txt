@@ -1,0 +1,11 @@
+@BRHTML:articleleft
+Someone still thinks that HTML and Javascript are not complete enough for making complete and complex applications.
+Thanks to the recent HTML5 extensions, our friends are gaining ground in terms of performances and <i>hardware integration</i>. You can play videos natively and audio without any plugin and do more obscure things like drawing canvas and geolocalization.
+The <i>geobox</i> widget is a little example of the geolocalization API provided by HTML5. Tapping the box, the widget will ask to the browser the current longitude and latitude of the device. Depending on the availability of a GPS (or geolocalization services) and the capabilies of your browser, an image of a map from Google Maps will appear, pinning up your position in the middle. Precision may vary, depending on the precision of your device and the approximations applied my your browser.
+There are a lot of tools inside your browser. Just figure out how to craft them for making what is in your mind.
+@BRHTML:articleright
+Geolocalization is something that is trending quite fast in these days, from microblogging to localized search engines.
+Since, from HTML5, a web page is able to ask to enabled devices and browsers the current position, you can integrate your magazine with geo-dependant services, like store locators, show nearby readers etc.
+You can provide offline services too, storing the placemarks on a JSON structure and providing one or more images for the map, dividing the area you need in sectors.
+If you're going to make a magazine about places in the world, you can make a geolocalized entry in your index page, that will point to the nearest place described in the current issue. Also for this solution no connection is needed.
+As usual, be creative with data.

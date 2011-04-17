@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" >
+		<title>Magaka Device tester</title>
+		<style>
+			html,body {
+				width:100%;
+				height:100%;
+			}
+			BODY {
+				background-image:url('libs/wood.jpg');
+			}
+			#topbox {
+				position:absolute;
+				right:10px;
+				top:10px;
+				background-color:#000000;
+				padding:10px;
+				margin-bottom:20px;
+				color:#ffffff;
+				font-family:Helvetica;
+				line-height:45px;
+				font-size:12px;
+				-moz-box-shadow: 0px 0px 20px #ffffff;
+				-webkit-box-shadow: 0px 0px 20px #ffffff;
+				box-shadow: 0px 0px 20px #ffffff;
+				-moz-border-radius:5px;
+				-webkit-border-radius:5px;
+				border-radius:5px;
+				width:600px;
+				-webkit-user-select:none;
+				-moz-user-select:none;
+			}
+			.optionbox {
+				position:absolute;
+				right:10px;
+				top:10px;
+				border:2px solid #ffffff;
+				height:20px;
+				width:20px;
+				line-height:20px;
+				padding:0px;
+				margin:0px;
+				text-align:center;
+				background-color:#ffffff;
+				color:#000000;
+				-moz-border-radius:5px;
+				-webkit-border-radius:5px;
+				border-radius:5px;
+				font-size:20px;
+				cursor:pointer;
+				-moz-box-shadow: 0px 0px 5px #ffffff;
+				-webkit-box-shadow: 0px 0px 5px #ffffff;
+				box-shadow: 0px 0px 5px #ffffff;
+			}
+			.blackbox {
+				right:20px;
+				top:20px;
+				border:2px solid #000000;	
+				background-color:#000000;
+				-moz-box-shadow: 0px 0px 5px #000000;
+				-webkit-box-shadow: 0px 0px 5px #000000;
+				box-shadow: 0px 0px 5px #000000;
+				color:#ffffff;
+			}
+			#topbox INPUT {
+				border:0px;
+				font-size:12px;
+				padding:5px;
+				margin:0px;
+				-moz-border-radius:5px;
+				-webkit-border-radius:5px;
+				border-radius:5px;
+			}
+		</style>
+	</head>
+	<body onload="init()">
+		<div class="optionbox blackbox" id="openbox" onclick="document.getElementById('topbox').style.display='block'">+</div>
+		<div id="topbox">
+			<div class="optionbox" id="closebox" onclick="document.getElementById('topbox').style.display='none'">&times;</div>
+			URL:&nbsp;<br><input id="pageurl" type='text' value='' style='width:580px' onchange="gotohome()"><br>
+			<input type='button' value='Turn' onclick='turn()'> <span id="selector"></span> <span id="current"></span>&nbsp;&nbsp;<input type='button' value='Home' onclick='gotohome()'> <input type='button' value='Tools' onclick='gototools()'> <input type='button' value='Index' onclick='gotoindex()'> <input type='button' value='Refresh' onclick='gotorefresh()'><br>
+			<input type='button' value='Turn' onclick='turnsizes()'>
+			Width: <input type="text" id="pwidth" style="width:50px" onchange="resizedisplay()">
+			Height: <input type="text" id="pheight" style="width:50px" onchange="resizedisplay()">
+			Topmargin: <input type="text" id="ptopmargin" style="width:50px" onchange="resizedisplay()">
+			Bottommargin: <input type="text" id="pbottommargin" style="width:50px" onchange="resizedisplay()">
+			<span id="orient"></span>
+		</div>
+		<div id="display" style="background-color:white;border:20px solid black;-moz-border-radius: 20px;border-radius: 15px;-moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);box-shadow: 5px 5px 5px  rgba(0,0,0,0.5);">
+			<div style="float:left;width:100%;height:20px;background-color:black;color:white;font-size:12px;text-align:center;overflow:hidden;border:1px dashed white" id="head"></div>
+			<iframe frameborder=0 id="ifram" style="float:left;margin:0px;padding:0px;width:100%;height:748px"></iframe>
+			<div style="float:left;width:100%;height:20px;background-color:black;color:white;font-size:12px;text-align:center;overflow:hidden;border:1px dashed white" id="bottom"></div>
+		</div>
+	</body>
+	<script>
+		var devices=[
+			{
+				id:"ipadfl",
+				label:"iPad (Fullscreen, landscape)",
+				width:1024,
+				height:768,
+				topmargin:20,
+				bottommargin:0,
+				next:"ipadfp"
+			},
+			{
+				id:"ipadfp",
+				label:"iPad (Fullscreen, portrait)",
+				width:768,
+				height:1024,
+				topmargin:20,
+				bottommargin:0,
+				next:"ipadfl"
+			},
+			{
+				id:"ipadsl",
+				label:"iPad (Safari, landscape)",
+				width:1024,
+				height:768,
+				topmargin:108,
+				bottommargin:0,
+				next:"ipadsp"
+			},
+			{
+				id:"ipadsp",
+				label:"iPad (Safari, portrait)",
+				width:768,
+				height:1024,
+				topmargin:108,
+				bottommargin:0,
+				next:"ipadsl"
+			},
+			{
+				id:"iphonefl",
+				label:"iPhone (Fullscreen, landscape)",
+				width:480,
+				height:320,
+				topmargin:20,
+				bottommargin:0,
+				next:"iphonefp"
+			},
+			{
+				id:"iphonefp",
+				label:"iPhone (Fullscreen, portrait)",
+				width:320,
+				height:480,
+				topmargin:20,
+				bottommargin:0,
+				next:"iphonefl"
+			},
+			{
+				id:"iphonesl",
+				label:"iPhone (Safari, landscape)",
+				width:480,
+				height:320,
+				topmargin:80,
+				bottommargin:44,
+				next:"iphonesp"
+			},
+			{
+				id:"iphonesp",
+				label:"iPhone (Safari, portrait)",
+				width:320,
+				height:480,
+				topmargin:80,
+				bottommargin:44,
+				next:"iphonesl"
+			}
+		];
+		function init() {
+			var device=getdevicebyid(geturlparameter("device"));
+			device=(device?device:0);
+			var text="<select id='deviceselect' onchange='devicechanged()'>";
+			for (var a=0;a<devices.length;a++)
+				text+="<option value='"+a+"' "+(a==device?"selected":"")+">"+devices[a].label+"<\/option>"
+			text+="<\/select>";
+			document.getElementById('selector').innerHTML=text;
+			document.getElementById("pageurl").value=(geturlparameter("url")?geturlparameter("url"):"index.html");
+			apply(device);
+		}
+		function devicechanged(e) {
+			apply(document.getElementById('deviceselect').selectedIndex);
+		}
+		
+		function apply(dev) {
+			settextvalues(devices[dev]);
+			resizedisplay();
+		}
+		
+		function settextvalues(device) {
+			if (!device.width||(device.width<=50)) device.width=50;
+			if (!device.height||(device.height<=50)) device.height=50;
+			if (!device.topmargin) device.topmargin=0;
+			if (!device.bottommargin) device.bottommargin=0;
+			if (device.topmargin+device.bottommargin>=device.height) device.height=device.topmargin+device.bottommargin+10;
+			document.getElementById("pwidth").value=device.width;
+			document.getElementById("pheight").value=device.height;
+			document.getElementById("ptopmargin").value=device.topmargin;
+			document.getElementById("pbottommargin").value=device.bottommargin;
+			document.getElementById("orient").innerHTML=(device.width>device.height?"Landscape":"Portrait");
+		}
+		
+		function resizedisplay() {
+			var tmpdevice={width:parseInt(document.getElementById("pwidth").value),height:parseInt(document.getElementById("pheight").value),topmargin:parseInt(document.getElementById("ptopmargin").value),bottommargin:parseInt(document.getElementById("pbottommargin").value)};
+			settextvalues(tmpdevice);
+			
+			document.getElementById("display").style.width=tmpdevice.width+"px";
+			document.getElementById("display").style.height=tmpdevice.height+"px";
+			if (tmpdevice.topmargin) {
+				document.getElementById("head").style.display="block";
+				document.getElementById("head").style.height=(tmpdevice.topmargin-2)+"px";			
+			} else document.getElementById("head").style.display="none";
+			if (tmpdevice.bottommargin) {
+				document.getElementById("bottom").style.display="block";
+				document.getElementById("bottom").style.height=(tmpdevice.bottommargin-2)+"px";			
+			} else document.getElementById("bottom").style.display="none";
+			document.getElementById("ifram").style.height=(tmpdevice.height-tmpdevice.topmargin-tmpdevice.bottommargin)+"px";
+			if (!document.getElementById("ifram").src) gotohome();					
+		}
+		
+		function pageurl() {
+			return document.getElementById("pageurl").value;
+		}
+		
+		function gotohome() {
+			document.getElementById("ifram").src=pageurl();
+		}
+
+		function gotoindex() {
+			document.getElementById("ifram").src=pageurl()+"?tool=index";
+		}
+
+		function gototools() {
+			document.getElementById("ifram").src=pageurl()+"?tool=help";
+		}
+
+		function gotorefresh() {
+			document.getElementById("ifram").src=document.getElementById("ifram").contentWindow.location;
+		}
+		
+		function turn() {
+			var org=devices[document.getElementById('deviceselect').selectedIndex];
+			var next=org.next;
+			var found=null;
+			for (var i=0;i<devices.length;i++) 
+				if (devices[i].id==next) { found=i; break; }
+			if (found!=null) {
+				document.getElementById('deviceselect').selectedIndex=found;
+				devicechanged();
+			}
+		}
+		
+		function turnsizes() {
+			var tmp=document.getElementById("pwidth").value;
+			document.getElementById("pwidth").value=document.getElementById("pheight").value;
+			document.getElementById("pheight").value=tmp;
+			resizedisplay();
+		}
+
+		function geturlparameter(name) {
+		  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		  var regexS = "[\\?&]"+name+"=([^&#]*)";
+		  var regex = new RegExp( regexS );
+		  var results = regex.exec( window.location.href );
+		  if( results == null )
+			return "";
+		  else
+			return results[1];
+		}
+		function getdevicebyid(id) {
+			for (var i=0;i<devices.length;i++)
+				if (devices[i].id==id) return i;
+			return null;
+		}
+		
+	</script>
+</html>

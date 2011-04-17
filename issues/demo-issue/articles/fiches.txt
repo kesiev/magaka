@@ -1,0 +1,11 @@
+@BRHTML:article
+Did you see the spinning star in the credits pages? Or did you paint your face on the <i>Your face on it</i> article? No? Too bad! Credits page is a must see for every project and drawing silly faces on a silhouette is funny but I'll forgive you for now.
+Here you can play with this <b>fiches table</b> on the right.
+You can drag the tokens around freely on the table and use multiple touches too, if your browser supports them. They are just DIVs with background images and a CSS rotated number in it.
+Since everything uses <b>HTML, CSS and Javascript</b> you can put out from the fridge all your favourite CSS and scripting skills for being creative.
+The tableaux uses the <b>dragboard widget</b>. A <b>widget</b> is a series of Javascript methods that can be sticked on any DOM child. Technically speaking, the <b>dragboard</b> is just a <b>div</b> with a green background and a <i>widget=dragboard</i> property in it. The <b>dragboard</b> widget will make any DIV's child draggable if the <i>draggable=yes</i> property is set. In this case, I've set that property on the DIVs in which I've drawn the single tokens using rounded corners and shadows. The <i>draggable</i> property is not set on the label and the <i>bet</i> box, so they are locked on the table.
+Widgets are into the <b>plugins</b> folder on the root of the project and loaded into the <b>issue file</b>, so you can load just the plugins that are needed in your pages.
+Widgets can also be <b>interactive</b> like the one in this page (and the scrolling strip of the previous one) or not interactive, like the red spinning star in the credits page. Not interactive widget will act like the page surface, so will change article and page when dragged. Interactive one will "handle" the touches and clicks by themself - that's why you can freely drag the fiches without changing page.
+You can set the interaction type of any single instance of a widget adding <i>interactive=yes</i> to the DOM nodes that you want to make interactive. If it is not defined, the widget will be shown but will not <i>catch</i> the touches on the page.
+
+I <i>bet</i> that you're going to have a look to the code! Move a pair of 50 tokens on the bet box for me, please.
