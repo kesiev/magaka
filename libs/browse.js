@@ -126,6 +126,8 @@ var browse={
 	_loadphase:0,
 	_travel:null,
 	_locked:false,
+
+	_applypagequeue:{busy:false,queue:[]},
 	
 	// *********************
 	// MOVEMENT PART
@@ -850,7 +852,7 @@ var browse={
 	},
 	setcontenttomodal:function() {
 		var cid=this.decidecontent(this._modalbox.originalpage)	;
-		this.applypage(this._modalbox,cid,"m"+(cid.substr?cid:"modal"),"modal",{});
+		this.applypage(this._modalbox,cid,"m"+(cid.substr?cid:"modal"),"modal");
 	},
 	layoutmodal:function() {
 		if (this._modalbox.ypos<1) {
@@ -1125,89 +1127,155 @@ var browse={
 			for (var b=0;b<fath.childNodes.length;b++)
 					this.findhotspots(evts,trashcan,fath.childNodes[b],page,idprefix,false,key+"-"+b)
 	},
-	applypage:function(page,content,idprefix,data) {	
-		if (content!=page.pageid) {
-			if (content) {
-				var tx="";
-				var classname=page.classname;
-				page.pageid=content;
-				page.pageprefix=idprefix;
-				if (content.substr) // If the content is a plain string, refer to its data
-					page.page=this._magazine.data[content];
-				else page.page=content; // else set the static page data
-				page.shown=false;
-				page.hotspots=[];		
-				this.resizepage(page,false); // Do not trigger the event - is resized just for startup
-				if (page.page.substr) // If just a string is specified, the HTML content is set
-					tx+=this.geturldata(page.page)
-				else {
-					if (page.page.image) // A page with background image. Is behind everything else.
-						tx+="<div style=\"overflow:hidden;width:100%;height:100%;background-image:url('"+page.page.image+"');background-repeat:no-repeat;background-position:center;\"></div>";					
-					if (page.page.html)  // Add the HTML defined in the issue files
-						tx+=page.page.html;
-					if (page.page.file) // An external file is specified.
-						tx+=this.geturldata(page.page.file)
-					if (page.page.widget) // Add a full screen widget, if needed.
-						tx+="<div style=\"overflow:hidden;width:100%;height:100%;"+(page.page.style?page.page.style:"")+"\" fullscreen='yes' interactive='yes' widget='"+page.page.widget+"' "+(page.page.attrs?page.page.attrs:"")+">"+(page.page.widgetcontent?page.page.widgetcontent:"")+"</div>";
-					if (page.page.template) { // Merge with the inline template and replace placeholders
-						for (var a=0;a<page.page.template.length;a++) {
-							classname+=" page-template-"+page.page.template[a];
-							tx+=this.geturldata(this._magazine.templates[page.page.template[a]].file);
-						}
-	
-						var ph=page.page.placeholders;
-						
+	_finalizeapplypage:function(){
+		var task=this._applypagequeue.queue.splice(0,1)[0];
+		task.page.obj.innerHTML=this.applystandardplaceholders(task.tx,task.data);
+
+		// Assign unique page ids and fixes events
+		var trashcan=[];
+		this.findhotspots(["onpageshow","onpageleave","onpageprepare","onpagedestroyed","onpageresize","onpagedrag","onpagedrop","onpagespring","onevent"],trashcan,task.page.obj,task.page,task.idprefix,true);
+		for (var a=0;a<trashcan.length;a++) trashcan[a].parentNode.removeChild(trashcan[a]);
+		this.broadcastevent(task.page,"onpageprepare"); // Broadcast a preparing event
+
+		if (task.callback) task.callback(true);
+		if (this._applypagequeue.queue.length) {
+			this.applypage();
+		} else {
+			this._applypagequeue.busy=false;
+		}
+	},
+	_applytemplate:function(data) {
+		var task=this._applypagequeue.queue[0];
+		if (task.page.page.template) { // Merge with the inline template and replace placeholders (callback)
+			switch (task.phase) {
+				case 1:{
+					if (this._settings.debug>0) console.log("applying placeholders");
+					var lines=data.split("\n");
+					task.ph={};
+					lines.push("@");
+					var cnt="";
+					var cid="";
+					var ct=null;
+					for (var i=0;i<lines.length;i++) {
+						if (lines[i].charAt(0)=="@") {
+							if (ct) {
+								cnt=cnt.replace(/^\s+|\s+$/g,"");
+								ct[1]=ct[1].replace(/^\s+|\s+$/g,"");
+								switch (ct[0]) {
+									case "TEXT": { task.ph[ct[1]]=this.htmlentities(cnt); break }
+									case "HTML": { task.ph[ct[1]]=cnt; break }
+									case "BRHTML": { task.ph[ct[1]]=cnt.replace(/\n/g,"<br>"); break }
+									case "URL": { task.ph[ct[1]]=cnt; break }
+								}
+							}
+							cnt="";
+							ct=lines[i].substr(1).split(":");
+						} else cnt+=lines[i]+"\n";
+					}
+					task.phase=10;
+					this._applytemplate();
+					break;			
+				}
+				case 10:{
+					if (task.ph) for (var a in task.ph)
+						task.tx=task.tx.replace(new RegExp("#"+a+"#","g"),task.ph[a]);
+					this._finalizeapplypage();
+					if (this._settings.debug>0) console.log("done!");
+					break;
+				}
+				default: {
+					if (data==undefined) task.counter=0; else {
+						if (this._settings.debug>0) console.log("loaded");
+						task.tx+=data;
+						task.counter++;
+					}
+					if (task.counter<task.page.page.template.length) {
+						if (this._settings.debug>0) console.log("loading template",task.counter+1,"of",task.page.page.template.length,this._magazine.templates[task.page.page.template[task.counter]].file);
+						this.geturldata(this._magazine.templates[task.page.page.template[task.counter]].file,this._applytemplate,this);
+					} else {
+						task.ph=task.page.page.placeholders;
+				
 						 // Copies the placeholders from another page
-						if (ph&&ph.like)
-							ph=this._magazine.data[ph.like].placeholders;
-							
-						// If is a string, is used as a file name. Load the file.
-						if (ph&&ph.substr) { 
-							var lines=this.geturldata(ph).split("\n");
-							ph={};
-							lines.push("@");
-							var cnt="";
-							var cid="";
-							var ct=null;
-							for (var i=0;i<lines.length;i++) {
-								if (lines[i].charAt(0)=="@") {
-									if (ct) {
-										cnt=cnt.replace(/^\s+|\s+$/g,"");
-										ct[1]=ct[1].replace(/^\s+|\s+$/g,"");
-										switch (ct[0]) {
-											case "TEXT": { ph[ct[1]]=this.htmlentities(cnt); break }
-											case "HTML": { ph[ct[1]]=cnt; break }
-											case "BRHTML": { ph[ct[1]]=cnt.replace(/\n/g,"<br>"); break }
-											case "URL": { ph[ct[1]]=cnt; break }
-										}
-									}
-									cnt="";
-									ct=lines[i].substr(1).split(":");
-								} else cnt+=lines[i]+"\n";
-							}					
+						if (task.ph&&task.ph.like)
+							task.ph=this._magazine.data[task.ph.like].placeholders;
+
+						if (task.ph&&task.ph.substr) { 
+							task.phase=1;
+							if (this._settings.debug>0) console.log("Loading placeholders",task.ph);
+							this.geturldata(task.ph,this._applytemplate,this);
+						} else {
+							task.phase=10;
+							this._applytemplate();
 						}
-						
-						// Apply the placeholders to the page
-						if (ph) for (var a in ph)
-							tx=tx.replace(new RegExp("#"+a+"#","g"),ph[a]);
 					}
 				}
-				page.obj.innerHTML=this.applystandardplaceholders(tx,data);
-				
-				// Assign unique page ids and fixes events
-				var trashcan=[];
-				this.findhotspots(["onpageshow","onpageleave","onpageprepare","onpagedestroyed","onpageresize","onpagedrag","onpagedrop","onpagespring","onevent"],trashcan,page.obj,page,idprefix,true);
-				for (var a=0;a<trashcan.length;a++) trashcan[a].parentNode.removeChild(trashcan[a]);
-				this.broadcastevent(page,"onpageprepare"); // Broadcast a preparing event
-			} else {
+			}
+		} else this._finalizeapplypage();
+	},
+	_applypage:function(data) {
+		var task=this._applypagequeue.queue[0];
+		if (task.page.page.substr) { // If just a string is specified, the HTML content is set (callback)
+			task.tx+=data;
+			this._applytemplate();
+		} else if (task.page.page.file) { // An external file is specified. (callback)
+			task.tx+=data;
+			this._applytemplate();
+		}
+	},
+	applypage:function(page,content,idprefix,data,callback) {
+		if (page!=undefined) {
+			if (content==page.pageid) {
+				if (callback) callback(false);
+			} else if (!content) {
 				page.pageid=null;
 				page.page=null;
 				page.hotspots=[];
 				page.obj.innerHTML=null;
+				if (callback) callback(true);
+			} else { // schedule
+				this._applypagequeue.queue.push({page:page,content:content,idprefix:idprefix,data:data,callback:callback});
+				if (!this._applypagequeue.busy) this.applypage(); else if (this._settings.debug>0) console.log("Applypage Enqueued.")
 			}
-			return true;
-		} else return false; 
+		} else {
+			
+			var task=this._applypagequeue.queue[0];
+			this._applypagequeue.busy=true;
+
+			if (task.tx==undefined) {
+				task.tx="";
+				task.page.pageid=task.content;
+				task.page.pageprefix=task.idprefix;
+				if (task.content.substr) // If the content is a plain string, refer to its data
+					task.page.page=this._magazine.data[task.content];
+				else task.page.page=task.content; // else set the static page data
+				task.page.shown=false;
+				task.page.hotspots=[];		
+				this.resizepage(task.page,false); // Do not trigger the event - is resized just for startup
+			}
+		
+			
+			if (task.page.page.substr) // If just a string is specified, the HTML content is set
+				this.geturldata(task.page.page,this._applypage,this);
+			else {
+				if (task.page.page.image) {// A page with background image. Is behind everything else.
+					task.tx+="<div style=\"overflow:hidden;width:100%;height:100%;background-image:url('"+task.page.page.image+"');background-repeat:no-repeat;background-position:center;\"></div>";					
+					this._applytemplate();
+				} else if (task.page.page.html) { // Add the HTML defined in the issue files
+					task.tx+=task.page.page.html;
+					this._applytemplate();
+				} else if (task.page.page.file) { // An external file is specified.
+					this.geturldata(task.page.page.file,this._applypage,this);
+				} else if (task.page.page.widget) { // Add a full screen widget, if needed.
+					task.tx+="<div style=\"overflow:hidden;width:100%;height:100%;"+(task.page.page.style?task.page.page.style:"")+"\" fullscreen='yes' interactive='yes' widget='"+task.page.page.widget+"' "+(task.page.page.attrs?task.page.page.attrs:"")+">"+(task.page.page.widgetcontent?task.page.page.widgetcontent:"")+"</div>";
+					this._applytemplate();
+				} else if (task.page.page.template) { // Merge with the inline template and replace placeholders
+					this._applytemplate();
+				}
+			}
+			
+		}
 	},
+	
 	// ---
 	// Page resize
 	// ---
@@ -2442,7 +2510,7 @@ var browse={
 		return document.getElementById(id)[document.getElementById(id).selectedIndex].value;
 	},
 	isbrowseridle:function() {
-		return !browse._loadingscreen&&!this._springing&&!this._animatinggui&&!this._travel&&!this._modalbox.animating&&(this._loadphase==1000)&&!browse._boxmaker.editing;
+		return !browse._loadingscreen&&!this._springing&&!this._animatinggui&&!this._travel&&!this._modalbox.animating&&(this._loadphase==1000)&&!browse._boxmaker.editing&&!browse._applypagequeue.busy;
 	},	
 	islandscape:function() {
 		return (this._width>this._height);
@@ -2457,17 +2525,25 @@ var browse={
 		pg.style.overflow="hidden";
 		pg.style.zIndex=1;
 		return pg;
-	},	
-	geturldata:function(ud) {
+	},
+	geturldata:function(ud,okcb,ctx) {
 		if (ud.indexOf("nocache=yes")>=0) this._webcache[ud]=null;
 		if (!this._webcache[ud]) {
 			if (this._settings.debug>0) console.log("Loading DATA: "+ud);
 			var xmlhttp=this.createXmlHttpRequest();
-			xmlhttp.open("GET",ud,false);
+			xmlhttp.open("GET",ud,true);
+			var self=this;
+			xmlhttp.onreadystatechange = function() {
+				 if(xmlhttp.readyState == 4)
+				 	if(((xmlhttp.status == 200) || (xmlhttp.status == 0)) && xmlhttp.getAllResponseHeaders().length) {
+				 		self._webcache[ud]=xmlhttp.responseText;
+				 		if (ctx) okcb.apply(ctx,[self._webcache[ud]]);
+				 		else okcb(self._webcache[ud]);
+				 	}
+			}
 			xmlhttp.send(null);
-			this._webcache[ud]=xmlhttp.responseText;
-		}
-		return this._webcache[ud];
+		} else if (ctx) okcb.apply(ctx,[this._webcache[ud]]);
+		else okcb(this._webcache[ud]);
 	},	
 	displaceobject:function(obj,x,y) {
 		if (browse._hardware.transform==null) {
