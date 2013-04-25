@@ -9,7 +9,8 @@ Notes for developers
 Todo
 ----
 
-* Empty for now
+* A simplified tutorial
+* RTL support
 
 Improvement
 -----------
